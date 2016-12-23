@@ -11,4 +11,13 @@ class User < ApplicationRecord
   def is_member_of?(group)
     particpated_groups.include?(group)
   end
+  
+  def join!(group)
+    particpated_groups << group
+  end
+
+  def quit!(group)
+    particpated_groups.delete(group)
+  end
+
 end

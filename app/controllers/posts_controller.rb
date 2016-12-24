@@ -1,7 +1,7 @@
 
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!, :only => [:new, :create]
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
   def new
     @group = Group.find(params[:group_id])
@@ -20,7 +20,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
 
   private
 
